@@ -1,0 +1,243 @@
+/* header section */
+.header{
+    position: sticky;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    gap: 9vw;
+    
+}
+.navbar .logo{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex: 1;
+
+}
+.navbar .logo span{
+    font-size: 1rem;
+
+}
+.navbar .logo .lable{
+    background-color: orangered;
+    padding: 0.15rem; 
+    margin: 0.2rem;
+    border-radius: 50%;
+    border: solid white 2px;
+    outline: 20px;
+    color: white;
+}
+.navbar .logo  .lable i{
+    border: solid white 3px;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+.navbar .menu-sec .nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: space-around;
+    cursor: pointer;
+    
+}
+.navbar .logo span{
+
+    font-size: 1.5rem;
+    color: orangered;
+    font-weight: 500;
+    font-family: 'Roboto Condensed', sans-serif; 
+}
+.icons{
+    display: flex;
+    gap: 1rem;
+    font-size: 1.4rem;
+
+    align-items: center;
+    color: var(--active-color);
+}
+.icons i{
+    padding: 0.3rem;
+}
+a:hover{
+    color: orangered;
+}
+#menu{
+    display: none;
+}
+
+
+/* shopping cart section starts here */
+
+.shoppingcart{
+    position: absolute;
+    top: 15vh; right: 0;
+    padding: 0.5rem 0.1rem;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(57, 55, 55, 0.24);
+    display: none;
+
+}
+.shoppingcart .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:1rem ;
+    background-color: rgba(249, 233, 233, 0.496);
+}
+
+.shoppingcart .shopping-wrapper{
+    background-color: white;
+    padding: 0.9rem;
+    display: flex;
+    width: fit-content;
+    max-width: 315px;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    right: 0;
+}
+.shopping-wrapper .cart-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+    margin: 0.2rem;
+}
+.cart-con{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.shopping-wrapper .cart-wrapper .cart-item{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+.shopping-wrapper .cart-wrapper .cart-item img{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.shopping-wrapper .cart-wrapper .cart-item .content{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+.shopping-wrapper .cart-wrapper .cart-item .content .inner-content{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.cart-item .content .inner-content .price{
+    font-size: larger;
+    color: orangered;
+}
+.cart-item .content .qty{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    
+}
+.cart-item .content .qty .total{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+}
+.cart-item .content .qty input{
+    width: 20%;
+    
+}
+.cart-con{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+hr{
+    background: orange;
+    border: none;
+    height: 0.5px;
+    width: 102%;
+
+}
+
+/* search form */
+.search-form{
+    display: flex;
+    position: absolute;
+    top: 12vh;right:0;
+    justify-content: flex-end;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    display: none;
+}
+.search-form form .input{
+    display: flex;
+    width: 30vw;
+    min-width: 300px;
+    gap: 0.5rem;
+    border: solid orange 1px;
+    align-items: center;
+    background-color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    z-index: 2;
+    box-shadow: 0.1rem 0.1rem 1rem rgba(128, 128, 128, 0.311);
+}
+.search-form form .input input{
+    width: 100%;
+    padding:0.5rem  1.5rem;
+    border: none;
+    outline: none;
+    flex: 1;
+    
+}
+/* media queries  */
+
+@media (max-width:769px) {
+    .navbar{
+        font-size: 1rem;
+        padding: 0.1rem;
+        margin: 0;
+    }
+    .navbar .menu-sec{
+        position: absolute;
+        left: 0;top: 13vh;
+        background-color: rgba(128, 128, 128, 0.351);
+        width: 100%;
+        height: 100vh;
+        display: none;
+
+    }
+    .navbar .menu-sec .nav{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        justify-content: space-evenly;
+        margin: 5px 5px;
+        background-color: white;
+        width: fit-content;
+        padding: 2rem;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+    #menu{
+        display: block;
+    }
+    .shoppingcart{
+        font-size: 0.8rem;
+    }
+   
+}
+
+

@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600&family=Kalam:wght@400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,400;0,6..12,600;1,6..12,200;1,6..12,300&display=swap');
+.shop{
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin: 0.1rem 1rem 1rem 1.5rem;
+
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: white;
+    border-radius: 20px;
+    min-width:300px;
+    flex: 1.5;
+}
+.sidebar .sh-categories{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.sidebar .sh-categories .cat-item{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.sidebar .sh-categories .cat-item *>{
+    flex: 90px 90px;
+}
+
+.sidebar .sh-categories .cat-item .content{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    text-align: center;
+    cursor: pointer;
+}
+.sidebar .sh-categories .cat-item .content img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+input {
+    color: orangered;
+    background-color: orangered;
+    width: 100%;
+}
+.taste, .price{
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 1rem 0.2rem;
+    
+}
+.producttags{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    padding: 10px 0;
+}
+.producttags .tag{
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.producttags .tag span {
+    padding: 0.9rem;
+    border: solid 1px orange;
+    border-radius: 5px;
+    cursor: pointer;
+}
+hr{
+    background-color: rgba(224, 227, 218, 0.615);
+}
+.products-disp{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    flex: 1;
+}.ads{
+    margin: 0.5rem;
+    position:relative;
+    border-radius: 20px;
+
+}
+.ads img{
+    width: calc(65vw - 100px);
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.ads .content{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 300px;
+    color: white;
+    background-color: rgba(35, 33, 33, 0.237);
+    font-size: 2rem;
+    border-radius: 20px;
+}
+.filter2{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 2rem ;
+    background-color: white;
+    margin: 2rem;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 1rem 1rem 6rem rgba(85, 84, 84, 0.108);
+}
+.filter2 .sort{
+    display: flex;
+    gap: 0.5rem;
+}
+.filter2 .icons{
+    color: rgb(185, 179, 179);
+
+}
+
+.grid-items{
+    /* display: grid;
+    grid-template-columns: repeat(autofit, minmax(5rem,1fr)); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 01.5rem;
+}
+.item-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.6rem;
+    margin: 0.3rem;
+    width: fit-content;
+    box-shadow: 0.1rem 0.2rem 0.5rem rgba(76, 75, 75, 0.497);
+
+}
+.item-card .top{
+    display: flex;
+    gap: 0.8rem;
+   color: orangered;
+    align-items: center;
+}
+.item-card .top span{
+    background-color: orange;
+    padding: 0.2rem 0.5rem;
+    color: white;
+}
+.item-card img{
+    width: 200px;
+    height:200px;
+    object-fit: cover;
+}
+.item-card .stars .name{
+    text-align: center;
+}
+.item-card .hover{
+    position: absolute;
+    top: 70px;right:10px
+    
+}
+.item-card .hover .icons{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+}
+.item-card .hover .icons i{
+    background-color: white;
+    padding: 0.5rem;
+    margin: 0.2rem;
+    border-radius: 50%;
+   
+}
+.item-card .button1 {
+    width: 100%;
+    background: rgb(255, 174, 0);
+}
+.item-card .name{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600&family=Kalam:wght@400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,400;0,6..12,600;1,6..12,200;1,6..12,300&display=swap');
+.form-wrapper{
+    display: flex;
+    gap: 0.9rem;
+    max-width: 1300px;
+    margin: 2rem auto;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(249, 235, 235, 0.679);
+    padding: 1rem 0;
+    border-radius: 20px;
+    border: solid white 1px;
+   
+}
+body{
+    background-image: url(../../pictures/back2.avif);
+    background-size:cover;
+    backface-visibility: hidden;
+    background-repeat: none;
+}
+.form-left{
+    padding: 0.5rem;
+    margin: 0.3rem;
+    flex: 200px auto;
+
+}
+.form-left form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.form-left form .heading{
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    text-align: center;
+
+}
+.form-left form .heading h2{
+    font-size: 2.3vw;
+    
+}
+.form-left form .logo{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+
+}
+.form-left form .logo span{
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
+    font-family: var(--heading-font);
+
+}
+.form-left form .logo .lable{
+    background-color: orangered;
+    padding: 0.1rem; 
+    margin: 0.2rem;
+    border-radius: 50%;
+    border: solid white 2px;
+    outline: 20px;
+    color: white;
+}
+.form-left form .logo  .lable i{
+    border: solid white 3px;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+.form-left form .inputs-wrapper{
+    display: flex;
+    padding: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.form-left form .inputs-wrapper .inputs{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+
+    font-size: 1rem;
+}
+.form-left form .inputs-wrapper .inputs input{
+    border: solid orangered 1px;
+    border-radius: 10px;
+    padding: 0.5rem;
+    outline:none;
+    width: 60%;
+}
+.form-left form .inputs-wrapper .button button{
+    width: 100%;
+    border: none;
+    margin: 0.5rem auto;
+}
+.form-left form .bottom{
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0.5rem;
+}
+.form-left form .bottom *>{
+    flex: 100px 90px;
+}
+
+.form-left form .bottom .sign{
+    color: orangered;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.form-right img{
+    height: 75vh;
+    width: 40vw;
+    min-width: 300px;
+}
+
