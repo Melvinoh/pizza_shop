@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="header.css">
-</head>
+    <link rel="stylesheet" href="./client/src/components/footer.css">
+    <link rel="stylesheet" href="./client/src/components/header.css">
+    <link rel="stylesheet" href="./client/src/components/form.css">
+    <link rel="stylesheet" href="styles.css">
 <body>
     <div class="header">
         <div class="navbar">
@@ -21,11 +23,11 @@
             </div>
            <div class="menu-sec">
                 <nav class="nav">
-                    <a href="#home">home</a>
+                    <a href="./client/src/components/signup_form.php">home</a>
                     <a href="/about.html"> about</a>
-                    <a href="shop.html">shop</a>
-                    <a href="#blogs">blogs</a>
-                    <a href="#contacts">contact</a>
+                    <a href="./client/src/pages/shop.php">shop</a>
+                    <a href="./client/src/pages/blogs.php">blogs</a>
+                    <a href="./client/src/components/login.php">contact</a>
                 </nav>
            </div>
             <div class="icons">
@@ -45,7 +47,7 @@
             <div class="cart-wrapper">
                 <div class="cart-con">
                     <div class="cart-item">
-                        <img src="../../pictures/pizza19.jpeg" alt="img">
+                        <img src="./client/pictures/pizza19.jpeg" alt="img">
                         <div class="content">
                             <h3>bbq pizza</h3>
                             <div class="inner-content">
