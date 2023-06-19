@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600&family=Kalam:wght@400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,400;0,6..12,600;1,6..12,200;1,6..12,300&display=swap');
 .form-wrapper{
     display: flex;
-    gap: 0.9rem;
+    gap: 1.9rem;
     max-width: 1300px;
     margin: 2rem auto;
     align-items: center;
@@ -38,7 +38,7 @@
 
 }
 .form-left form .heading h2{
-    font-size: 2.3vw;
+    font-size: 2vw;
     
 }
 .form-left form .logo{

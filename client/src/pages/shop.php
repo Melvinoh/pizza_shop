@@ -1,5 +1,4 @@
-
-
+<?php include('./client/src/components/header.php')?>
     <section class="shop">
         <div class="sidebar">
             <h3>filters </h3>
@@ -110,4 +109,5 @@
     </section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="./index.js"></script>
+    <?php include('./client/src/components/footer.php')?>
 

@@ -8,7 +8,8 @@ include("./api/db.php");
         <h1 class="">Best and fastest delivery to you place</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores quis ratione odit ipsam voluptatem ipsa veritatis sed voluptates unde omnis necessitatibus, explicabo nesciunt reiciendis nemo quae accusamus consequuntur culpa soluta?</p>
         <div class="button-rapper">
-         <button>get started</button>
+            <a href="./client/src/components/signup_form.php"><button>get started</button></a>
+
          <div class="video">
              <span><i class="fa-solid fa-play"></i></span>
              <span>how To Order!</span>

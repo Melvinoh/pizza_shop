@@ -33,8 +33,8 @@
             <div class="icons">
                 <i class="fa-solid fa-bars" id="menu"></i>
                 <i class="fa-solid fa-user"></i>
-                <i class="fa-solid fa-basket-shopping"></i>
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-basket-shopping" id="cart"></i>
+                <i class="fa-solid fa-magnifying-glass" id="search-i"></i>
             </div>
         </div>
     </div>
@@ -84,7 +84,3 @@
             </div>
         </form>
     </div>
-
-    
-</body>
-</html>

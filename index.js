@@ -42,4 +42,36 @@ var swiper2 = new Swiper(".mySwiper1", {
       el: ".swiper-pagination",
     },
   });
+
+
+  var searchForm = document.querySelector('.search-form');
+  var shoppingCart = document.querySelector('.shoppingcart');
+  var nav = document.querySelector('.menu-sec');
+
+  var menu = document.getElementById('menu');
+  var cart = document.getElementById('cart');
+  var search = document.getElementById('search-i');
+
+  menu.onclick = () => {
+    nav.classList.toggle('active');
+    shoppingCart.classList.remove('active');
+    searchForm.classList.remove('active');
+
+  }
+  cart.onclick = () => {
+    shoppingCart.classList.toggle('active');
+    nav.classList.remove('active');
+    searchForm.classList.remove('active');
+
+  }
+  search.onclick = () => {
+    searchForm.classList.toggle('active');
+    shoppingCart.classList.remove('active');
+    nav.classList.remove('active');
+
+  }
+
+
+
+
   
