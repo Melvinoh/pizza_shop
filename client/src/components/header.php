@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./client/src/components/header.css">
     <link rel="stylesheet" href="./client/src/components/form.css">
     <link rel="stylesheet" href="styles.css">
+   <script src=""></script>
 <body>
     <div class="header">
         <div class="navbar">
@@ -32,9 +33,10 @@
            </div>
             <div class="icons">
                 <i class="fa-solid fa-bars" id="menu"></i>
-                <i class="fa-solid fa-user"></i>
+                
+                <i class="fa-solid fa-user"><a href="./client/src/components/login.php"></a></i>
                 <i class="fa-solid fa-basket-shopping" id="cart"></i>
-                <i class="fa-solid fa-magnifying-glass" id="search-i"></i>
+                <i class="fa-solid fa-magnifying-glass" id='search'></i>
             </div>
         </div>
     </div>

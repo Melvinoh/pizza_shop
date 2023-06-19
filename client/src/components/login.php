@@ -13,7 +13,7 @@
 </head>
    <div class="form-wrapper">
         <div class="form-left">
-            <form action="">
+            <form action="post" id="loginForm">
                 <div class="logo">
                     <div class="lable">
                      <i class="fa-sharp fa-solid fa-utensils"></i>
@@ -35,7 +35,10 @@
                         <input type="text">
                     </div>
                     <div class="button">
-                        <button class="button1"> login:</button>
+                        <button class="button1" type="submit"> login:</button>
+                    </div>
+                    <div class="error-con">
+
                     </div>
                 </div>
                 <hr>
@@ -49,5 +52,7 @@
             <img src="../../pictures/cheff2.png" alt="img">
         </div>
    </div>
+   <script src="./login.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </body>
 </html>
