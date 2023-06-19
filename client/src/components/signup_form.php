@@ -16,7 +16,7 @@
             <img src="../../pictures/pizza21.webp" alt="img">
         </div>
         <div class="form-left">
-            <form action="post">
+            <form method="post" id="signupForm">
                 <div class="logo">
                     <div class="lable">
                      <i class="fa-sharp fa-solid fa-utensils"></i>
@@ -30,28 +30,31 @@
                 </div>
                 <div class="inputs-wrapper">
                     <div class="inputs">
-                        <label for="username"> fisrst name</label>
-                        <input type="text">
+                        <label for="fname"> first name</label>
+                        <input type="text" name="fname">
                     </div>
                     <div class="inputs">
-                        <label for="username"> second name</label>
-                        <input type="text">
+                        <label for="sname"> second name</label>
+                        <input type="text" name="sname">
                     </div>
                     <div class="inputs">
-                        <label for="username"> email</label>
-                        <input type="text">
+                        <label for="email"> email</label>
+                        <input type="text" name="email">
                     </div>
                     <div class="inputs">
                         <label for="username"> username</label>
-                        <input type="text">
+                        <input type="text" name="username">
                     </div>
                     <div class="inputs">
-                        <label for="username"> password </label>
-                        <input type="text">
+                        <label for="password" > password </label>
+                        <input type="password" name="password">
                     </div>
                   
                     <div class="button">
                         <button class="button1">sign up</button>
+                    </div>
+                    <div class="error">
+
                     </div>
                 </div>
                 <hr>
@@ -63,5 +66,8 @@
         </div>
    </div>    
 </body>
-<script src="../../../index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./login.js"></script>
+<script src="./login.js"></script>
 </html>

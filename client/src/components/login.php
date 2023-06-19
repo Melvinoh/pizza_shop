@@ -28,17 +28,17 @@
                 <div class="inputs-wrapper">
                     <div class="inputs">
                         <label for="username"> username:</label>
-                        <input type="text">
+                        <input type="text" name="username">
                     </div>
                     <div class="inputs">
                         <label for="username"> password:</label>
-                        <input type="text">
+                        <input type="text" name="password">
                     </div>
                     <div class="button">
-                        <button class="button1" type="submit"> login:</button>
+                        <button class="button1" type="submit" name="submit"> login:</button>
                     </div>
-                    <div class="error-con">
-
+                    <div class="error">
+                         
                     </div>
                 </div>
                 <hr>
@@ -52,7 +52,8 @@
             <img src="../../pictures/cheff2.png" alt="img">
         </div>
    </div>
-   <script src="./login.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="./login.js"></script>
 </body>
 </html>

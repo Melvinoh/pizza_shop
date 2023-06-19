@@ -1,24 +1,37 @@
 
-var login = document.getElementById('loginForm');
+$("#loginForm").on("submit",function(event){
 
-login.onsubmit =  (e) =>{
-    e.preventDefault();
-    var form_inputs = login.serialize;
-    var container = document.querySelector('.error-con');
-  
-    console.log(form_inputs);
-  
-    if(!form_inputs.checkValidity()){
-      container.innerHTML = form_inputs.validationMessage;
+    event.preventDefault();
+    var loginvalues =$(this).serialize();
+    console.log(loginvalues.lengh);
+
+    if(loginvalues.length ===  19){
+        $('.error').html("all atributes are required");
+        console.log('<i class="fa-solid fa-circle-exclamation"></i> all fields are required');
+
     }else{
-      var xhttp = new XMLHttpRequest();
-  
-      xhttp.onload = () =>{
-        container.innerHTML =xhttp.responseText()
-      };
-      xhttp.open("GET",'/api/users.php?q=' + form_inputs , true)
-      xhttp.send()
+        $.post("/pizza_shop/api/users.php?q=login", loginvalues, function(data){
+            $(".error").html(data);
+    
+           console.log(loginvalues);
+    
+        })
     }
-  
-  }
-  
+
+});
+$("#signupForm").on("submit",function(event){
+
+    event.preventDefault();
+    var signupvalues =$(this).serialize();
+    console.log(signupvalues.length);
+
+    if(signupvalues.length ===  40){
+        $('.error').html("all atributes are required");
+        console.log('all fields are required');
+    }else{
+        $.post("/pizza_shop/api/users.php?q=signup", signupvalues, function(data){
+            $(".error").html(data);    
+           console.log(signupvalues);
+        })
+    }
+});

@@ -1,12 +1,12 @@
 <?php 
 
-$username = "root";
+$dbusername = "root";
 $passord = "";
 $hostname ="localhost:3306";
 $dbs = "pizza_shop";
 
 try {
-    $db = new mysqli($hostname,$username,$passord,$dbs);
+    $db = new mysqli($hostname,$dbusername,$passord,$dbs);
 } catch (\Throwable $th) {
 
     $th = "could not connect to db";
