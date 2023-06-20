@@ -44,7 +44,7 @@
         <div class="shopping-wrapper">
             <div class="heading">
                 <h2>your cart Melvin</h2>
-                <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-xmark close"></i>
             </div>
             <div class="cart-wrapper">
                 <div class="cart-con">
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                         <div class="delete">
-                            <i class="fa-solid fa-trash"></i>
+                            <i class="fa-solid fa-trash " ></i>
                         </div>
                     </div>
                     <hr>

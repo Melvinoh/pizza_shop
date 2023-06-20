@@ -46,6 +46,7 @@ var swiper2 = new Swiper(".mySwiper1", {
 var searchForm = document.querySelector('.search-form');
 var shoppingCart = document.querySelector('.shoppingcart');
 var nav = document.querySelector('.menu-sec');
+var closeCart = document.querySelector(".close");
 
 var menu = document.getElementById('menu');
 var cart = document.getElementById('cart');
@@ -68,6 +69,19 @@ search.onclick = () => {
   shoppingCart.classList.remove('active');
   nav.classList.remove('active');
 };
+closeCart.onclick = () =>{
+  shoppingCart.classList.remove('active');
+}
+
+window.onscroll = () =>{
+  document.querySelector('navbar').style = "background-color:white";
+};
+
+
+
+
+
+
 
 // login script
 
