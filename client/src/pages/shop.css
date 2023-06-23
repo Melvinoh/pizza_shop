@@ -6,6 +6,15 @@
     margin: 0.1rem 1rem 1rem 1.5rem;
 
 }
+button{
+    border: none;
+}
+body{
+    max-width: 1350px;
+}
+a{
+    color: black;
+}
 .sidebar{
     display: flex;
     flex-direction: column;
@@ -139,7 +148,7 @@ hr{
     justify-content: center;
     gap: 01.5rem;
 }
-.item-card{
+.item-card a{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -164,8 +173,8 @@ hr{
     color: white;
 }
 .item-card img{
-    width: 200px;
-    height:200px;
+    width: 150px;
+    height:130px;
     object-fit: cover;
 }
 .item-card .stars .name{
@@ -191,7 +200,9 @@ hr{
 }
 .item-card .button1 {
     width: 100%;
-    background: rgb(255, 174, 0);
+    background:linear-gradient(to bottom,
+    orange,
+    orangered);
 }
 .item-card .name{
     text-align: center;

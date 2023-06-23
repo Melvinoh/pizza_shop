@@ -1,10 +1,41 @@
 <?php
 
+session_start();
 
 $username = $password = $fname = $sname = $email = $validation ="";
 
+if(!isset($_SESSION['login'])){
+    $q = $_GET['q'];
+    if($q === 'login'){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-//  signing up section
+        include('./db.php');
+
+        $sql = "SELECT `password`, `username` FROM `users` where username = '$username'";
+        $results = $db->query($sql);
+        $row =  $results->fetch_assoc();
+       
+        if(!isset($row)) {
+            echo "no username found <br>";
+        }else{
+            if($row['username'] === $username && $row['password'] === $password){
+                $_SESSION['login'] = $row['username'];
+                echo($_SESSION['login']);
+                echo "redirecting to home page";
+            }else{
+                echo "wrong username or password";
+                
+            };
+        };
+    };
+}else{
+    echo "you are already logged in ";
+};
+ 
+
+
+ //signing up section
 if(isset($_GET['q']) && $_GET['q'] === 'signup') {
     if (isset($_POST['fname'])){
       $fname = test( $_POST['fname']); 
@@ -57,7 +88,7 @@ if(isset($_GET['q']) && $_GET['q'] === 'signup') {
 
     if(empty($validation)){
         include("./db.php");
-        $sql = "INSERT INTO `users` (`first_name`, `second_name`, `email`, `password`,`username`) VALUES ('$fname', '$sname', '$password', '$email', '$username')";
+        $sql = "INSERT INTO `users` (`first_name`, `second_name`, `email`, `password`,`username`) VALUES ('$fname', '$sname', '$email','$password',  '$username')";
         $query = $db->query($sql);
         echo "account has been created succefully";
 
@@ -75,7 +106,7 @@ function test($data){
     return $data;
 };
 
-//
+
 
 
 

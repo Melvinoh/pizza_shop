@@ -43,6 +43,24 @@ var swiper2 = new Swiper(".mySwiper1", {
 });
 
 
+var swiper3 = new Swiper(".mySwiper", {
+  spaceBetween: 10,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
+var swiper4 = new Swiper(".mySwiper2", {
+  spaceBetween: 20,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+    swiper: swiper,
+  },
+});
+
+
 var searchForm = document.querySelector('.search-form');
 var shoppingCart = document.querySelector('.shoppingcart');
 var nav = document.querySelector('.menu-sec');
@@ -74,16 +92,38 @@ closeCart.onclick = () =>{
 }
 
 window.onscroll = () =>{
-  document.querySelector('navbar').style = "background-color:white";
+  document.querySelector('header').style = "background-color:white border: solid 1px orangered";
 };
 
 
+// filter scripts 
+
+// $('#img_submit').on("click", function (e) {
+//     e.preventDefault();
+//     var filterValues = $('#categoryFil').serialize();
+//     alert(filterValues);
+
+//     $.post('C:/xampp/htdocs/pizza_shop/api/item_filter.php?q=catfilter', filterValues ,function(data){
+//       $('.grid-items').html(data)
+//     })
+// })
+
+//product cart data
+
+$(document).ready(function(){
+  $("#product_data").on("submit", function(event){
+      event.preventDefault();
+      
+      var formValues= $(this).serialize();
+
+      $.post("/pizza_shop/api/cart.php?q=addtocart", formValues , function(data){ 
+          $(".cart-wrapper").html(data);
+          alert("one item has been added to cart")
+      })
+  })          
+});
 
 
-
-
-
-// login script
 
 
 

@@ -10,7 +10,7 @@ $("#loginForm").on("submit",function(event){
         console.log('<i class="fa-solid fa-circle-exclamation"></i> all fields are required');
 
     }else{
-        $.post("/pizza_shop/api/users.php?q=login", loginvalues, function(data){
+        $.post("/pizza_shop/api/users.php?l=login", loginvalues, function(data){
             $(".error").html(data);
     
            console.log(loginvalues);

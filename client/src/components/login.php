@@ -13,7 +13,7 @@
 </head>
    <div class="form-wrapper">
         <div class="form-left">
-            <form action="post" id="loginForm">
+            <form method="post" id="loginForm">
                 <div class="logo">
                     <div class="lable">
                      <i class="fa-sharp fa-solid fa-utensils"></i>
