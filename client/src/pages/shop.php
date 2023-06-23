@@ -1,7 +1,4 @@
 <?php include('../components/header.php')?>
-<link rel="stylesheet" href="../components/footer.css">
-<link rel="stylesheet" href="../components/header.css">
-<link rel="stylesheet" href="shop.css">
 
     <section class="shop">
         <div class="sidebar">
@@ -16,7 +13,7 @@
                  
                  foreach($results as $row):
                 ?>
-                <form method="" id="categoryFil">
+                <form method="" >
                     <div class="cat-item">
                         <div class="content">
                             <img src="../../pictures/<?php echo($row['url_img'])?>" alt="img" id="img_submit">
@@ -28,7 +25,6 @@
                     </div>
                 </form>
                 <?php endforeach ?>
-
             </div>
             <hr>
             <form action="">
@@ -74,7 +70,6 @@
             <hr>
             <div class="hot-deals">
 
-
             </div>
         </div>
         <div class="products-disp">
@@ -82,7 +77,7 @@
                 if(isset( $_GET['f'])){
                     $filter = $_GET['f'];
                     include('C:/xampp/htdocs/pizza_shop/api/db.php');
-                    $sql = "SELECT * FROM `items-tb` WHERE `name` like %$filter% or `category_id`like %$filter%";
+                    $sql = "SELECT * FROM `items-tb` WHERE `name` like' %$filter%' or `category_id`like '%$filter%'";
                     $results = $db->query($sql);
                     $row = $results->fetch_assoc();
                 }else{
@@ -159,11 +154,6 @@
             </div>
             </div>
         </div>
-
-        
-       
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="../../../index.js"></script>
     <?php include('../components/footer.php')?>
 

@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/pizza_shop/client/src/components/footer.css">
-    <link rel="stylesheet" href="/pizza_shop/client/src/components/header.css">
+    <link rel="stylesheet" href="/pizza_shop/client/src/styles/header.css">
     <link rel="stylesheet" href="/pizza_shop/client/src/components/form.css">
+    <link rel="stylesheet" href="/pizza_shop/client/src/pages/shop.css">
     <link rel="stylesheet" href="styles.css">
    <script src=""></script>
 <body>

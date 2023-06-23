@@ -91,9 +91,11 @@ closeCart.onclick = () =>{
   shoppingCart.classList.remove('active');
 }
 
-window.onscroll = () =>{
-  document.querySelector('header').style = "background-color:white border: solid 1px orangered";
-};
+// window.onscroll = () =>{
+//   var header = document.querySelector('.header');
+//   header.style.backgroundColor ="white";
+//   header.style.border = "solid orangered 1px"
+// };
 
 
 // filter scripts 
@@ -110,7 +112,7 @@ window.onscroll = () =>{
 
 //product cart data
 
-$(document).ready(function(){
+$('document').ready(function(){
   $("#product_data").on("submit", function(event){
       event.preventDefault();
       

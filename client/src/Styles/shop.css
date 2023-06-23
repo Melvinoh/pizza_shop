@@ -12,9 +12,7 @@ button{
 body{
     max-width: 1350px;
 }
-a{
-    color: black;
-}
+
 .sidebar{
     display: flex;
     flex-direction: column;
@@ -31,14 +29,18 @@ a{
     flex-direction: column;
     gap: 1rem;
 }
+.sidebar .sh-categories form{
+    width: fit-content;
+}
 .sidebar .sh-categories .cat-item{
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 80px;
 }
 .sidebar .sh-categories .cat-item *>{
-    flex: 90px 90px;
+    flex: 80px 80px;
 }
 
 .sidebar .sh-categories .cat-item .content{
@@ -48,7 +50,7 @@ a{
     text-align: center;
     cursor: pointer;
 }
-.sidebar .sh-categories .cat-item .content img{
+.sidebar .sh-categories  .cat-item .content img{
     width: 80px;
     height: 80px;
     object-fit: cover;
@@ -56,7 +58,6 @@ a{
 }
 input {
     color: orangered;
-    background-color: orangered;
     width: 100%;
 }
 .taste, .price{

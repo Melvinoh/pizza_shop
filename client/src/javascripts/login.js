@@ -12,9 +12,7 @@ $("#loginForm").on("submit",function(event){
     }else{
         $.post("/pizza_shop/api/users.php?l=login", loginvalues, function(data){
             $(".error").html(data);
-    
            console.log(loginvalues);
-    
         })
     }
 

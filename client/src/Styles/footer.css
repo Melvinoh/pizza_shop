@@ -17,7 +17,7 @@ footer{
     justify-content: space-between;
     flex: 1;
 }
-.ft-wrapper .icons, a{
+.ft-wrapper .icons{
     color: white;
 }
 .ft-wrapper .quicklinks{
@@ -32,9 +32,10 @@ footer{
     font-size: 1.5rem;
     font-weight: 400;
 }
- .ft-wrapper .quicklinks .links{
+.ft-wrapper .quicklinks .links{
     display: flex;
     flex-direction: column;
+    color: white;
     gap: 0.6rem;
  
 }

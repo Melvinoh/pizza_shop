@@ -25,8 +25,8 @@ if (!isset($_SESSION['cart'])){
     $pizza = new shopping;
     $q = $_GET['q'];
    
-    if (isset($_POST['p_id'])){
-        $foodname = $_POST['p_id'];
+    if (isset($_POST['id'])){
+        $id = $_POST['id'];
         if($q == 'removefromcart'){
             $pizza->removefromcart();
             $count = count($_SESSION['cart']);
@@ -36,7 +36,6 @@ if (!isset($_SESSION['cart'])){
             }
         }
     }
-    
     if($q == 'clearcart'){
         $pizza->clearcart(); 
         $_SESSION['count'] = 0; 
@@ -72,7 +71,6 @@ class shopping {
         foreach($_SESSION['cart']as $key=>$value)
             if($value['id'] === $_POST['id']){
                 unset($_SESSION['cart'][$key]);   
-                
             }
         }
     function addtocart(){
@@ -124,22 +122,25 @@ if(isset($_SESSION['cart'])){
                     </div>
                     <div class="qty">
                         <label for="qty"> qty </label>
-                        <input type="number" value="'.$value['qty'].'">
+                        <form method ="post">
+                            <input type="number" name ="qty" value="'.$value['qty'].' class ="itemqty">
+                            <input type="hidden" name = "id" value ="'.$value['id'].' class ="itemid">
+                        </form>
                         <div class="total">
-                            <h3>Total</h3>
-                            <span>'.$value['total'].'</span>
+                            <h3>Total</h3>  
+                            <span>'.$value['total'].'</span>  
                         </div>
                     </div>
                 </div>
                 <form class="delete" >
                     <input type="hidden" name="id" value="'.$value['id'].'"/>
-                    <button class="button1"><i class="fa-solid fa-trash "type="submit"></i></button>
+                    <button class="button1 "><i class="fa-solid fa-trash "type="submit"></i></button>
                 </form>
             </div>
             <hr>
         ';
     };
-    $output.= '<button classname"button1"> clear cart </button>';
+    $output.= '<button class="button2 clear"> clear cart </button>';
     // $ct = $_SESSION['count'];
     // $out = "";
     echo($output);
@@ -156,9 +157,8 @@ if(isset($_SESSION['cart'])){
 <script>       
     $(document).ready(function(){
         $(".clear").on("click", function(){
-            
             var q = "clearcart"
-            $.post("cart.php?q=clearcart", q, function(data){
+            $.post("/pizza_shop/api/cart.php?q=clearcart", q, function(data){
                 // Display the returned data in browser
             // alert(data);
             $(".cart-wrapper").html(data);
@@ -169,7 +169,8 @@ if(isset($_SESSION['cart'])){
 </script> 
 <script>
     $(document).ready(function(){
-        $(".delete").on("submit", function(){
+        $(".delete").on("submit", function(e){
+            e.preventDefault();
             var id =$(this).serialize();
             $.post("/pizza_shop/api/cart.php?q=removefromcart", id , function(data){
                  $(".cart-wrapper").html(data);
@@ -177,11 +178,11 @@ if(isset($_SESSION['cart'])){
             })
         });
     });  
-
     $(document).ready(function(){
-        $(".uptqty").on("change", function(){
+        $(".itemqty").on("change", function(){
             var qty =$(this).val();
-            var id = $(this).siblings(".name").val();
+            var id = $(this).siblings(".itemid").val();
+                 alert(qty , id);
             $.post("cart.php?q=updatecart", {qty:qty,id:id} , function(data){
                 $(".cart-wrapper").html(data);
             })

@@ -31,24 +31,26 @@ include("./api/db.php");
                 $row = $results->fetch_assoc();
                 foreach($results as $row):
                 ?>
-                <div class="box">
-                    <img src="./client/pictures/<?php echo($row['url_img'])?>" alt="img">
-                    <div class="content">
-                        <i class="fa-solid fa-bookmark"></i>
-                        <div class="starts">
-                            <p><?php echo($row['cat_name'])?></p>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star-half"></i>
-                        </div>
-                        <div class="bottom">
-                            <span><i class="fa-solid fa-plus"></i></span>
-                            <span>view more</span>
+                <a href="/pizza_shop/client/src/pages/shop.php?f=<?php echo($row['_id'])?>"> 
+                    <div class="box">
+                        <img src="/pizza_shop/client/pictures/<?php echo($row['url_img'])?>" alt="img">
+                        <div class="content">
+                            <i class="fa-solid fa-bookmark"></i>
+                            <div class="starts">
+                                <p><?php echo($row['cat_name'])?></p>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star-half"></i>
+                            </div>
+                            <div class="bottom">
+                                <span><i class="fa-solid fa-plus"></i></span>
+                                <span>view more</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
                 <?php endforeach; ?>
             </div>
         

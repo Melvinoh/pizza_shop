@@ -37,6 +37,13 @@ body{
     max-width:1300px ;
     margin: auto;
 }
+a{
+    color: black;
+}
+form{
+    max-width: fit-content;
+}
+
 nav a{
     color: black;
 }
@@ -52,6 +59,7 @@ nav a{
 
 input{
     border: none;
+    outline:none;
 }
 
 .hero-section{
