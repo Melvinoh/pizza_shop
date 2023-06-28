@@ -137,14 +137,16 @@
                             <p> ksh <?php echo($row["price"])?></p>
                         </div>
                     </a>
-                    <form action="" method="post" class="item-details">
-                        <input type="hidden" name="id" value="<?php echo($row["_id"])?>">
-                        <input type="hidden" name="name" value="<?php echo($row["name"])?>">
-                        <input type="hidden" name="url_img" value="<?php echo($row["url_img"])?>">
-                        <input type="hidden" name="price" value="<?php echo($row["price"])?>">
-                        <!-- <input type="hidden" name="description" value="<?php echo($row["description"])?>"> -->
-                        <button class="button1" type="submit">+ add to cart</button>
-                    </form>
+                    <div class="hidden">
+                        <form method="post" class ="product_data">
+                            <input type="hidden" name="p_name" value="<?php echo($row['name'])?>">
+                            <input type="hidden" name="p_id" value="<?php echo($row['_id'])?>">
+                            <input type="hidden" name="p_price" value="<?php echo($row['price'])?>">
+                            <input type="hidden" name="p_category" value="<?php echo($row['category_id'])?>">
+                            <input type="hidden" name="p_url" value="<?php echo($row['url_img'])?>">
+                            <button class="button1" type="submit"> add to cart</button>
+                        </form>
+                    </div>
 
                     
                 </div>

@@ -105,11 +105,10 @@ class shopping {
 if(isset($_SESSION['cart'])){
     $output="";   
     foreach($_SESSION['cart']as $item=>$value){
-        echo ($value['img']);
         $output.='
         <div class="cart-con">
             <div class="cart-item">
-                <img src="C:/xampp/htdocs/pizza_shop/client/pictures/pizza20.jpeg" alt="img">
+                <img src="/pizza_shop/client/pictures/'.$value['img'].'" alt="img">
                 <div class="content">
                     <h3>'.$value['name'].'</h3>
                     <div class="inner-content">

@@ -67,14 +67,15 @@ include("./api/db.php");
                 $row = $results->fetch_assoc();
                 foreach($results as $row ):
                 ?>
-
-                <div class="col-item">
-                    <img src="./client/pictures/<?php echo($row['url_img'])?>" alt="img">
-                    <div class="content">
-                        <span class="button2"><?php echo($row['cat_name'])?></span>
-                        <h2>community favourites</h2>
+                <a href="/pizza_shop/client/src/pages/shop.php?f=<?php echo($row['_id'])?>">
+                    <div class="col-item">
+                        <img src="./client/pictures/<?php echo($row['url_img'])?>" alt="img">
+                        <div class="content">
+                            <span class="button2"><?php echo($row['cat_name'])?></span>
+                            <h2>community favourites</h2>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <?php endforeach; ?>
             </div>
         
@@ -107,9 +108,7 @@ include("./api/db.php");
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-regular fa-star-half"></i> 
                             </div>
-                            <span class="button1">
-                                order now
-                            </span>
+                            <a href="/pizza_shop/client/src/pages/single_item.php?q=<?php echo($row['_id'])?>"><span class="button1">order now</span></a>
                         </div>
                     </div>
                 </div>
@@ -127,10 +126,12 @@ include("./api/db.php");
                 $row = $results->fetch_assoc();
                 foreach($results as $row ):
                 ?>
-                <div class="pop-item">
-                        <img src="./client/pictures/<?php echo($row['url_img'])?>" alt="img">
-                        <h3><?php echo( $row['name'])?></h3>
-                </div>
+                <a href="/pizza_shop/client/src/pages/single_item.php?q=<?php echo($row['_id'])?>">
+                    <div class="pop-item">
+                            <img src="./client/pictures/<?php echo($row['url_img'])?>" alt="img">
+                            <h3><?php echo( $row['name'])?></h3>
+                    </div>
+                </a>
                 <?php endforeach ?>
             </div>
         </div>
@@ -165,8 +166,15 @@ include("./api/db.php");
                                     <p><?php echo($row['qty'])?> qty</p>
                                 </div>
                             </div>
-                            <div class="button">
-                                <span class="button1">add to cart</span>
+                            <div class="hidden">
+                                <form method="post" class ="product_data">
+                                    <input type="hidden" name="p_name" value="<?php echo($row['name'])?>">
+                                    <input type="hidden" name="p_id" value="<?php echo($row['_id'])?>">
+                                    <input type="hidden" name="p_price" value="<?php echo($row['price'])?>">
+                                    <input type="hidden" name="p_category" value="<?php echo($row['category_id'])?>">
+                                    <input type="hidden" name="p_url" value="<?php echo($row['url_img'])?>">
+                                    <button class="button1" type="submit"> add to cart</button>
+                                </form>
                             </div>
                             <div class="hover">
                                 <div class="icons">
@@ -203,4 +211,4 @@ include("./api/db.php");
             <?php endforeach; ?>
         </div>
     </div>
-    <?php   include("./client/src/components/footer.php")?>
+    <?php   include("../pizza_shop/client/src/components/footer.php")?>

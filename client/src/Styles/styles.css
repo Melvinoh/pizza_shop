@@ -37,9 +37,6 @@ body{
     max-width:1300px ;
     margin: auto;
 }
-button{
-    border: none;
-}
 a{
     color: black;
 }
@@ -50,7 +47,6 @@ form{
 nav a{
     color: black;
 }
-
 .button1{
     background: var(--buttoncolor);
     color: white;
@@ -62,8 +58,11 @@ nav a{
 }
 
 input{
-    border: none;
+    border:1px orange solid;
     outline:none;
+    padding: 0.2rem;
+    border-radius: 0.4rem;
+
 }
 
 .hero-section{

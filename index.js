@@ -63,6 +63,7 @@ var swiper4 = new Swiper(".mySwiper2", {
 
 var searchForm = document.querySelector('.search-form');
 var shoppingCart = document.querySelector('.shoppingcart');
+var shopping1= document.querySelector('.shopping1');
 var nav = document.querySelector('.menu-sec');
 var closeCart = document.querySelector(".close");
 
@@ -78,6 +79,7 @@ menu.onclick = () => {
 };
 cart.onclick = () => {
   shoppingCart.classList.toggle('active');
+  shopping1.classList.toggle('active') ;
   nav.classList.remove('active');
   searchForm.classList.remove('active');
 
@@ -92,10 +94,23 @@ closeCart.onclick = () =>{
 }
 
 // window.onscroll = () =>{
-//   var header = document.querySelector('.header');
-//   header.style.backgroundColor ="white";
-//   header.style.border = "solid orangered 1px"
+//   if(document.body.scrollTop >= 5){
+
+//     console.log(header)
+//     header.classList.add('active');
+//   }else{
+//     header.classList.remove('active');
+//   }
 // };
+
+document.addEventListener('scroll', ()=>{
+  var header = document.querySelector('.header');
+  if(window.scrollY > 0){
+    header.classList.add('active');
+  }else{
+    header.classList.remove('active');
+  }
+})
 
 
 // filter scripts 
@@ -113,7 +128,7 @@ closeCart.onclick = () =>{
 //product cart data
 
 $('document').ready(function(){
-  $("#product_data").on("submit", function(event){
+  $(".product_data").on("submit", function(event){
       event.preventDefault();
       
       var formValues= $(this).serialize();

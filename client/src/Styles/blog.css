@@ -1,0 +1,148 @@
+.blogs{
+    display: flex;
+    gap: 0.9rem;
+    width: 90%;
+    margin: 0.6rem auto;
+ 
+}
+.prod-blog{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0.7rem;
+    flex: 1.6;
+    background-color: white;
+}
+.prod-blog img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.prod-blog .heading, .history, .pr-rv, .comments-con{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0.3rem;
+}.prod-blog .heading .ratings{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+
+.review{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;width: 300px;
+    padding: 1.6rem;
+    background: rgba(251, 248, 248, 0.779);
+    align-items: center;
+    border-radius: 0.4rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem rgba(255, 68, 0, 0.237);
+}
+.review img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.review .content{
+    display: flex;
+    flex-direction: column; gap: 0.4rem;
+}
+.comment-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+.comment-wrapper .comment{
+    display: flex;
+    gap: 0.9rem;
+    background-color: white;
+    padding: 0.9rem;
+    align-items: center;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.3rem 0.4rem 10rem rgba(255, 68, 0, 0.051);
+}
+.comment-wrapper .comment img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+.comment-wrapper .comment .conent{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.comment-wrapper .comment .content .head{
+    display: flex;
+    gap: 0.6rem;
+}
+.lv-comment{
+    width: 90%;
+    margin: 0.5rem auto;
+    display: flex;
+    flex-direction: column ;
+    gap: 0.7rem;
+}
+.lv-comment form{
+    display: flex;
+    gap: 1.6rem;
+    margin: 0.3rem;
+    flex-wrap: wrap;
+}
+.lv-comment form *>{
+    width: 150px;
+}
+.prod-sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    flex: 1;
+}
+.cat-blog, .relatedpost-con,.archives{
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+.catblogwrap{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.rpwrap{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.rpwrap .post{
+    display: flex;
+    gap: 0.6rem;
+    margin: 0.4rem;
+    padding: 0.7rem;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.rpwrap .post img{
+    width: 90px;
+    height: 90px;
+    border-radius: 0.7rem;
+}
+.arc-wrap{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.swiper{
+    margin: 0;
+}
+.swiper-wrapper{
+    display: flex;
+    
+}

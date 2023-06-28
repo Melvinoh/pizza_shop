@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<?php include('../components/header.php')?>
-<link rel="stylesheet" href="../components/footer.css">
-<link rel="stylesheet" href="../components/header.css">
-<link rel="stylesheet" href="single_item.css">
+
+    <?php include('../components/header.php')?>
     <section class="single-product">
         <div class="right">
             <div class="top"></div>
@@ -80,7 +77,7 @@
                                             <input type="number">
                                         </div>
                                         <div class="hidden">
-                                            <form method="post" id="product_data">
+                                            <form method="post" class="product_data">
                                                 <input type="hidden" name="p_name" value="'.$row['name'].'">
                                                 <input type="hidden" name="p_id" value="'.$row['_id'].'">
                                                 <input type="hidden" name="p_price" value="'.$row['price'].'">
@@ -124,12 +121,4 @@
             </div>
         </div>
     </section>
-    
-   
-   <script>
-    
-    </script>
- 
-    
-</body>
-</html>
+    <?php include('/xampp/htdocs/pizza_shop/client/src/components/footer.php')?>

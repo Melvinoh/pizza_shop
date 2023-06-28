@@ -1,0 +1,106 @@
+.checkout{
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+.checkout-wrapper{
+    display: flex;
+    gap: 0.9rem;
+    padding: 0.5rem;
+    margin: 0.6rem;
+}
+.checkout-wrapper .left{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex:1;
+}
+.address-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    margin: 0.3rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.6rem;
+    box-shadow: 0.1rem 0.3rem 2.6rem rgba(255, 68, 0, 0.082);
+}
+.address_info{
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding: 0.5rem;
+
+
+}
+
+.address-wrapper .inputs{
+    display: flex;
+    gap: 0.7rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.scheduled-del{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    padding: 0.9rem;
+
+}
+.tabs-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0.7rem auto;
+    background: white;
+    border-radius: 0.5rem;
+}
+.tabs-wrapper .button2{
+    display: flex;
+    gap: 0.7rem;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.5rem;
+    border: solid 1px orange;
+    border-radius: 0.5rem;
+}
+.pay-mode{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.checkout-wrapper .right{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+.del-details .del-det-con{
+    display: flex;
+    gap: 0.7rem;
+}
+.cart-order{
+    background-color: white;
+    padding: 1.5rem;
+    margin: 0.5rem;
+    box-shadow: 0.1rem 0.3rem 1.6rem rgba(255, 68, 0, 0.273);
+}
+.del-details{
+    background-color: white;
+    padding: 0.8rem;
+    margin: 0.4rem;
+    box-shadow: 0.1rem 0.3rem 2.6rem rgba(255, 68, 0, 0.082);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+
+}.del-det-con .content{
+    display:flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
