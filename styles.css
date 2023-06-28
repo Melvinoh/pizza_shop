@@ -40,9 +40,7 @@ body{
 button{
     border: none;
 }
-a{
-    color: black;
-}
+
 form{
     max-width: fit-content;
 }

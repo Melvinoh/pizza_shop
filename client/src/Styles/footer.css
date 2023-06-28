@@ -90,3 +90,6 @@ footer .ft-wrapper .about .logo  .lable i{
 footer img{
     width: 33%;
 }
+footer .ft-wrapper .quicklinks a{
+    color: white;
+}

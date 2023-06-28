@@ -54,7 +54,7 @@
             </div>
             <hr>
         </div>
-        <img src="./client/pictures/cheff2.png" alt="img">
+        <img src="/pizza_shop/client/pictures/cheff2.png" alt="img">
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>

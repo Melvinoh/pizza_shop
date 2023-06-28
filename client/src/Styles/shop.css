@@ -39,6 +39,11 @@ body{
     justify-content: center;
     max-width: 80px;
 }
+.sidebar .sh-categories .catwrap{
+    display: flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+}
 .sidebar .sh-categories .cat-item *>{
     flex: 80px 80px;
 }

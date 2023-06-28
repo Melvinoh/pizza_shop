@@ -256,7 +256,7 @@ body{
     flex-direction: column;
     gap: 0.7rem;
 }
-.dash-order_details .totals{
+.totals{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -264,16 +264,16 @@ body{
     padding: 0.7rem;
     border-radius: 0.2rem;
 }
-.dash-order_details .totals .top-t .inputs{
+.totals .top-t .inputs{
     display: flex;
     justify-content: space-between;
 
 }
-.dash-order_details .totals .top-t{
+.totals .top-t{
     width: 80%;
     margin: 1.2rem auto;
 }
-.dash-order_details .totals .tinputs{
+.totals .tinputs{
     display: flex;
     justify-content: center;
     gap: 0.8rem;

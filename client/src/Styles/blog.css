@@ -1,9 +1,17 @@
+.blog-con{
+    width: 97%;
+    margin: 0.6rem auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
 .blogs{
     display: flex;
     gap: 0.9rem;
     width: 90%;
     margin: 0.6rem auto;
- 
 }
 .prod-blog{
     display: flex;

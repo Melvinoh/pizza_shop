@@ -297,3 +297,7 @@
     background-color: rgba(6, 3, 3, 0.232);
     border-radius: 0.7rem;
 }
+.price{
+    display: flex;
+    gap: 0.5rem;
+}

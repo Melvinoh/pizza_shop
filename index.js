@@ -113,17 +113,7 @@ document.addEventListener('scroll', ()=>{
 })
 
 
-// filter scripts 
 
-// $('#img_submit').on("click", function (e) {
-//     e.preventDefault();
-//     var filterValues = $('#categoryFil').serialize();
-//     alert(filterValues);
-
-//     $.post('C:/xampp/htdocs/pizza_shop/api/item_filter.php?q=catfilter', filterValues ,function(data){
-//       $('.grid-items').html(data)
-//     })
-// })
 
 //product cart data
 
@@ -134,9 +124,51 @@ $('document').ready(function(){
       var formValues= $(this).serialize();
 
       $.post("/pizza_shop/api/cart.php?q=addtocart", formValues , function(data){ 
-          $(".cart-wrapper").html(data);
+          $(".cart-wrapper").html(data.ct);
           alert("one item has been added to cart")
       })
+  })          
+});
+
+$(document).ready(function(){
+  $(".clear").on("click", function(){
+      var q = "clearcart"
+      $.post("/pizza_shop/api/cart.php?q=clearcart", q, function(data){
+      $(".cart-wrapper").html(data);
+      })
+  });
+});   
+$(document).ready(function(){
+  $(".delete").on("submit", function(e){
+      e.preventDefault();
+      var id =$(this).serialize();
+      $.post("/pizza_shop/api/cart.php?q=removefromcart", id , function(data){
+           $(".cart-wrapper").html(data);
+           alert(id);
+      })
+  });
+});  
+$(document).ready(function(){
+  $(".itemqty").on("change", function(){
+      var qty =$(this).val();
+      var id = $(this).siblings(".itemid").val();
+           alert(qty , id);
+      $.post("cart.php?q=updatecart", {qty:qty,id:id} , function(data){
+          $(".cart-wrapper").html(data);
+      })
+  });
+});  
+
+//user address scripts
+
+$('document').ready(function(){
+  $(".address-wrapper").on("submit", function(event){
+      event.preventDefault();
+      var formValues= $(this).serialize();
+      $.post("/pizza_shop/api/orders.php", formValues , function(data){ 
+          $(".user-details").html(data);
+          alert(formValues);
+    })
   })          
 });
 

@@ -45,12 +45,13 @@ if (!isset($_SESSION['cart'])){
         $pizza->updatecart($qty);
     }
 }   
+
 class shopping {
     function updatecart($qty){
         foreach ($_SESSION['cart'] as $key => $value){
-            if($value['name'] == $_POST['id']){
+            if($value['id'] == $_POST['id']){
 
-                $_SESSION['cart'][$key]['qty'] =(int) $qty;
+                $_SESSION['cart'][$key]['qty'] = (int) $qty;
                 $qty = $_SESSION['cart'][$key]['qty'];
                 $price =(float) $_SESSION['cart'][$key]['price'];
                 $_SESSION['cart'][$key]['total'] = number_format($price * $qty,2);
@@ -59,9 +60,11 @@ class shopping {
                     unset($_SESSION['cart'][$key]); 
                 }
 
+
             };
         };
     }
+    
     function clearcart(){
         unset($_SESSION['cart']);
         unset($_SESSION['count']);
@@ -78,7 +81,7 @@ class shopping {
         $img =$_POST['p_url'];
         $food_name =$_POST['p_name'];
         $price =$_POST['p_price'];
-        $qty = 1;
+        $qty =  1;
         $total = number_format(($price) * $qty,2);
         
 
@@ -120,16 +123,16 @@ if(isset($_SESSION['cart'])){
                         <span class="price">'.$value['price'].'</span>
                     </div>
                     <div class="qty">
-                        <label for="qty"> qty </label>
-                        <form method ="post">
-                            <input type="number" name ="qty" value="'.$value['qty'].' class ="itemqty">
-                            <input type="hidden" name = "id" value ="'.$value['id'].' class ="itemid">
-                        </form>
+                        <div class="ty">
+                            <lable for="qty"> qty</lable>
+                            <input type="hidden" value ="'.$value['id'].'" class = "itemid">
+                            <input type="number" value="'.$value['qty'].'" class="uptqty">
+                        </div>
                         <div class="total">
                             <h3>Total</h3>  
                             <span>'.$value['total'].'</span>  
                         </div>
-                    </div>
+                    </div>  
                 </div>
                 <form class="delete" >
                     <input type="hidden" name="id" value="'.$value['id'].'"/>
@@ -140,12 +143,15 @@ if(isset($_SESSION['cart'])){
         ';
     };
     $output.= '<button class="button2 clear"> clear cart </button>';
-    // $ct = $_SESSION['count'];
-    // $out = "";
+    $output.= '<button class="button1 " style="width:100%;"> <a href="/pizza_shop/client/src/pages/checkout.php">procceed to checkout</a> </button>';
+    $ct = $_SESSION['count'];
     echo($output);
+    $data['output'] = $output;
+    $data['count'] = $ct;
+    echo($ct);
+
 }else{
     echo" your cart is empty";
-    
 };
 
    
@@ -158,8 +164,6 @@ if(isset($_SESSION['cart'])){
         $(".clear").on("click", function(){
             var q = "clearcart"
             $.post("/pizza_shop/api/cart.php?q=clearcart", q, function(data){
-                // Display the returned data in browser
-            // alert(data);
             $(".cart-wrapper").html(data);
             })
         });
@@ -173,16 +177,14 @@ if(isset($_SESSION['cart'])){
             var id =$(this).serialize();
             $.post("/pizza_shop/api/cart.php?q=removefromcart", id , function(data){
                  $(".cart-wrapper").html(data);
-                 alert(id);
             })
         });
     });  
     $(document).ready(function(){
-        $(".itemqty").on("change", function(){
+        $(".uptqty").on("change", function(){
             var qty =$(this).val();
             var id = $(this).siblings(".itemid").val();
-                 alert(qty , id);
-            $.post("cart.php?q=updatecart", {qty:qty,id:id} , function(data){
+            $.post("/pizza_shop/api/cart.php?q=updatecart", {qty:qty,id:id} , function(data){
                 $(".cart-wrapper").html(data);
             })
         });

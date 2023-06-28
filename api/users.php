@@ -23,6 +23,7 @@ if(!isset($_SESSION['login'])){
                 $_SESSION['login'] = $row['username'];
                 echo($_SESSION['login']);
                 echo "redirecting to home page";
+                header('location: /pizza_shop/client/src/dashboard.php');
             }else{
                 echo "wrong username or password";
                 
