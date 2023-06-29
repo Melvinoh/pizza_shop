@@ -165,7 +165,6 @@ input{
     padding: 2rem;
     margin: 0.3rem 1rem;
     width: fit-content;
-  
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -210,8 +209,6 @@ input{
     gap: 0.9rem;
     justify-content: center;
     flex-wrap: wrap;
-
-
 }
 .col-item{
     display: flex;

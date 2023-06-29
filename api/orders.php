@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('C:/xampp/htdocs/pizza_shop/api/db.php');
 echo ($_POST['email']);
     if(!isset($_SESSION['user_address'])){
         $_SESSION['user_address'] = array();
@@ -7,7 +8,6 @@ echo ($_POST['email']);
         $email =$_POST['email'];
         $state =$_POST['state'];
         $phone =$_POST['phone'];
-        $state =$_POST['state'];
         $city =$_POST['city'];
         $zip = $_POST['zip'];
         $user = array(
@@ -18,6 +18,8 @@ echo ($_POST['email']);
             'town'=> $city,
             'streets'=>$state 
         );
+        $items = "";
+        $items = json_encode($_SESSION['cart']);
         $username = array_column($_SESSION['user_address'],'name');
         if (!in_array($name,$username)){
             array_push($_SESSION['user_address'],$user);
@@ -68,6 +70,35 @@ echo ($_POST['email']);
         echo($output);
     }
     
+    //invoice id generator
+    $name = $_POST['name'];
+    $email =$_POST['email'];
+    $state =$_POST['state'];
+    $phone =$_POST['phone'];
+    $city =$_POST['city'];
+    $zip = $_POST['zip'];
+    $items = "";
+    $items = json_encode($_SESSION['cart']);
+
+    $select =" SELECT invoice FROM  `orders-tb` order by invoice asc limit 1";
+    $rs = $db->query($select);
+    $inv = $rs->fetch_assoc();
+    $slen= strlen($customerid);
+    
+    if(!empty($inv['invoice'])){
+        $len = number_format($slen) + 6;
+        $invoice = $inv['invoice'];
+        $invoice = substr($invoice,$len);
+        $invoice = intval($invoice);
+        $invoice = 'C'. $customerid .'-INV-0'.($invoice + 1);
+    }else {
+        $invoice = 'C'.$customerid.'-INV-01';
+    }
+
+    $sql = "INSERT INTO `orders-tb` (`name`, email, city, `state`, items, `phone`, zip, invoice)
+    values ('$name', '$email', '$city', '$state','$items','$phone','$zip','$invoice')";
+    $insert = $db->query($sql);
+
    
 
     

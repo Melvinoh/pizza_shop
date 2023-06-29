@@ -10,7 +10,7 @@ if(!isset($_SESSION['login'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        include('./db.php');
+        include('C:\xampp\htdocs\pizza_shop\api\db.php');
 
         $sql = "SELECT `password`, `username` FROM `users` where username = '$username'";
         $results = $db->query($sql);

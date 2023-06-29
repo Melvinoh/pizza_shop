@@ -124,7 +124,9 @@ $('document').ready(function(){
       var formValues= $(this).serialize();
 
       $.post("/pizza_shop/api/cart.php?q=addtocart", formValues , function(data){ 
-          $(".cart-wrapper").html(data.ct);
+          $(".cart-wrapper").html(data);
+          $(".cart-order").html(data);
+          
           alert("one item has been added to cart")
       })
   })          
@@ -144,7 +146,8 @@ $(document).ready(function(){
       var id =$(this).serialize();
       $.post("/pizza_shop/api/cart.php?q=removefromcart", id , function(data){
            $(".cart-wrapper").html(data);
-           alert(id);
+           $(".cart-order").html(data);
+           alert("are you sure you want to remove item");
       })
   });
 });  
@@ -155,6 +158,7 @@ $(document).ready(function(){
            alert(qty , id);
       $.post("cart.php?q=updatecart", {qty:qty,id:id} , function(data){
           $(".cart-wrapper").html(data);
+          $(".cart-order").html(data);
       })
   });
 });  

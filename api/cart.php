@@ -165,6 +165,7 @@ if(isset($_SESSION['cart'])){
             var q = "clearcart"
             $.post("/pizza_shop/api/cart.php?q=clearcart", q, function(data){
             $(".cart-wrapper").html(data);
+            $(".cart-order").html(data);
             })
         });
     });   
@@ -177,6 +178,7 @@ if(isset($_SESSION['cart'])){
             var id =$(this).serialize();
             $.post("/pizza_shop/api/cart.php?q=removefromcart", id , function(data){
                  $(".cart-wrapper").html(data);
+                 $(".cart-order").html(data);
             })
         });
     });  
@@ -186,6 +188,7 @@ if(isset($_SESSION['cart'])){
             var id = $(this).siblings(".itemid").val();
             $.post("/pizza_shop/api/cart.php?q=updatecart", {qty:qty,id:id} , function(data){
                 $(".cart-wrapper").html(data);
+                $(".cart-order").html(data);
             })
         });
     });  

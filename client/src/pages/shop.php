@@ -5,6 +5,29 @@
             <h3>filters </h3>
             <div class="sh-categories">
                 <h3>Categories</h3>
+                <div class="catwrap">
+                    <?php
+                    $query = "SELECT * FROM `categories`";
+                    include('C:/xampp/htdocs/pizza_shop/api/db.php');
+                    $results = $db->query($query);
+                    $row = $results->fetch_assoc();
+                    
+                    foreach($results as $row):
+                    ?>
+                    <form method="" >
+                        <div class="cat-item">
+                            <div class="content">
+                                <img src="../../pictures/<?php echo($row['url_img'])?>" alt="img" id="img_submit">
+                                <h5><?php echo($row['cat_name'])?></h5>
+                            </div>
+                            <div class="hidden">
+                                <input type="hidden" name="id" value="<?php echo($row['_id'])?>">
+                            </div>
+                        </div>
+                    </form>
+                    <?php endforeach; ?>
+                </div>
+
                 <?php
                  $query = "SELECT * FROM `categories`";
                  include('C:/xampp/htdocs/pizza_shop/api/db.php');
@@ -154,8 +177,8 @@
                 <?php endforeach; ?>
             </div>
             </div>
-            </div>
         </div>
-    </section>
+    </div>
+</section>
     <?php include('../components/footer.php')?>
 
