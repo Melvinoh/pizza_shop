@@ -26,6 +26,7 @@ $("#signupForm").on("submit",function(event){
     if(signupvalues.length ===  40){
         $('.error').html("All atributes are required");
         console.log('All fields are required');
+        alert(signupvalues);
     }else{
         $.post("/pizza_shop/api/users.php?q=signup", signupvalues, function(data){
             $(".error").html(data);    

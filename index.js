@@ -93,15 +93,6 @@ closeCart.onclick = () =>{
   shoppingCart.classList.remove('active');
 }
 
-// window.onscroll = () =>{
-//   if(document.body.scrollTop >= 5){
-
-//     console.log(header)
-//     header.classList.add('active');
-//   }else{
-//     header.classList.remove('active');
-//   }
-// };
 
 document.addEventListener('scroll', ()=>{
   var header = document.querySelector('.header');
@@ -161,10 +152,11 @@ $(document).ready(function(){
           $(".cart-order").html(data);
       })
   });
-});  
+}); 
+
+
 
 //user address scripts
-
 $('document').ready(function(){
   $(".address-wrapper").on("submit", function(event){
       event.preventDefault();
@@ -175,6 +167,7 @@ $('document').ready(function(){
     })
   })          
 });
+
 
 
 

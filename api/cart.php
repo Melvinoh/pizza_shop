@@ -154,11 +154,11 @@ if(isset($_SESSION['cart'])){
     echo" your cart is empty";
 };
 
-   
-   
+
 //scripts  for remove,clear, chheckout, and invoice buttons
 
 ?>
+
 <script>       
     $(document).ready(function(){
         $(".clear").on("click", function(){

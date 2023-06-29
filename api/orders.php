@@ -61,13 +61,15 @@ echo ($_POST['email']);
                         <span>Total</span>
                         <span>$37.66</span>
                     </div>
-                    <div class="button1" style="width:100%;">
+                    <div class="button1 orderbtn" style="width:100%; value="place order"">
                         <span>place order</span>
                     </div>
                 </div>
             ';
         };
+
         echo($output);
+        unset($_SESSION['user_address']);
     }
     
     //invoice id generator
@@ -79,8 +81,9 @@ echo ($_POST['email']);
     $zip = $_POST['zip'];
     $items = "";
     $items = json_encode($_SESSION['cart']);
+    $customerid = 001;
 
-    $select =" SELECT invoice FROM  `orders-tb` order by invoice asc limit 1";
+    $select =" SELECT invoice, customer_id FROM  `orders-tb` order by invoice asc limit 1";
     $rs = $db->query($select);
     $inv = $rs->fetch_assoc();
     $slen= strlen($customerid);
@@ -88,20 +91,31 @@ echo ($_POST['email']);
     if(!empty($inv['invoice'])){
         $len = number_format($slen) + 6;
         $invoice = $inv['invoice'];
+        $customerid = $inv['customer_id'];
         $invoice = substr($invoice,$len);
         $invoice = intval($invoice);
-        $invoice = 'C'. $customerid .'-INV-0'.($invoice + 1);
+        $invoice = 'C-'. $customerid .'-INV-0'.($invoice + 1);
     }else {
         $invoice = 'C'.$customerid.'-INV-01';
     }
+   
 
     $sql = "INSERT INTO `orders-tb` (`name`, email, city, `state`, items, `phone`, zip, invoice)
     values ('$name', '$email', '$city', '$state','$items','$phone','$zip','$invoice')";
     $insert = $db->query($sql);
 
-   
-
-    
-
 
 ?>
+<script>
+    $(".orderbtn").on("click", function(event){
+        event.preventDefault();
+        var order = $(this).val();
+        $.post("/pizza_shop/api/orders.php?q=order", order , function(data){ 
+            $(".user-details").html(data);
+            alert(order);
+        })
+    });       
+
+</script>
+  
+

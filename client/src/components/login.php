@@ -14,12 +14,12 @@
    <div class="form-wrapper">
         <div class="form-left">
             <form method="post" id="loginForm">
-                <div class="logo">
+                <a href="/pizza_shop/index.php" class="logo">
                     <div class="lable">
                      <i class="fa-sharp fa-solid fa-utensils"></i>
                     </div>
-                     <Span>pizza shop.</Span>
-                 </div>
+                     <Span style="color: black;">pizza shop.</Span>
+                </a>
                  <hr>
                 <div class="heading">
                     <h2>welcome back  to pizza shop</h2>
@@ -44,7 +44,10 @@
                 <hr>
                 <div class="bottom">
                     <span>don"t have an account ?</span>
-                    <span class="sign">signup for free</span>
+                    <a href="/pizza_shop/client/src/components/signup_form.php">
+                        <span class="sign">signup for free</span>
+                    </a>
+                    
                 </div>
             </form>
         </div>
@@ -54,6 +57,6 @@
    </div>
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <script src="/pizza_shop/client/src/javascripts/login.js"></script>
+    <script src="./login.js"></script>
 </body>
 </html>

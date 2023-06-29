@@ -102,6 +102,7 @@
                         <div class="button2">
                             <i class="fa-solid fa-truck"></i>
                             <span>paypal</span>
+
                         </div>
                         <div class="button2">
                             <i class="fa-solid fa-truck"></i>
@@ -114,7 +115,9 @@
                     </div>
                     <div class="payment">
                         <div class="del-details">
+                            <img src="/client/pictures/2560px-M-PESA_LOGO-01.svg.png" alt="">
                             <p>
+
                                 Lorem ipsum dolor sit amet consectetur
                                 adipisicing elit. Quaerat unde sunt debitis asperiores 
                                 quisquam aspernatur, sed et? Quisquam, repudiandae commodi?
