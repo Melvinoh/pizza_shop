@@ -145,10 +145,11 @@ if(isset($_SESSION['cart'])){
     $output.= '<button class="button2 clear"> clear cart </button>';
     $output.= '<button class="button1 " style="width:100%;"> <a href="/pizza_shop/client/src/pages/checkout.php">procceed to checkout</a> </button>';
     $ct = $_SESSION['count'];
-    echo($output);
     $data['output'] = $output;
     $data['count'] = $ct;
-    echo($ct);
+    $data = json_encode($data);
+
+    echo $output;
 
 }else{
     echo" your cart is empty";

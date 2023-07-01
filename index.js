@@ -108,18 +108,19 @@ document.addEventListener('scroll', ()=>{
 
 //product cart data
 
-$('document').ready(function(){
+$(document).ready(function(){
   $(".product_data").on("submit", function(event){
       event.preventDefault();
       
       var formValues= $(this).serialize();
 
       $.post("/pizza_shop/api/cart.php?q=addtocart", formValues , function(data){ 
-          $(".cart-wrapper").html(data);
-          $(".cart-order").html(data);
+          $(".cart-wrapper").html(data.ct);
+          $(".cart-order").html(data.ct);
+          console.log(data)
           
           alert("one item has been added to cart")
-      })
+      },"json");
   })          
 });
 
