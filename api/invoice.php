@@ -10,13 +10,13 @@ class pdf extends fpdf {
         $this->cell(2 ,);
         $this->cell(35,5,'INVOICE',0,1,'L');
         $this->ln(2);
-        $this->image('.\pictures\wall paper\wall paper 3.jpg',87,18,7,7);
+        // $this->image('/pizza_shop/client/pictures/pizza1.jpg',87,18,7,7);
         $this->setfont( 'Arial', 'UIB',12);
         $this->cell(84 ,30);
-        $this->cell(35,10 ,'Rascon Tastes',0,1, 'c');
+        $this->cell(35,10 ,'Pizza_shop',0,1, 'c');
         $this->setfont( 'courier', 'I',10);
         $this->cell(70 ,30);
-        $this->cell(35,6 ,'Email : rascontastes@gmail.com',0,1, 'c');
+        $this->cell(35,6 ,'Email : pizza_shoptastes@gmail.com',0,1, 'c');
         $this->cell(70 ,30);
         $this->cell(35,6 ,'Adress: P.O BOx 9310-10900 ',0,1, 'c');
         $this->cell(70 ,30);
@@ -39,9 +39,9 @@ class pdf extends fpdf {
 }
  $invoice = new pdf('p','mm','A5');
  $invoice->AddPage();
-include('dbconnect.php');
-$sql ="SELECT * FROM oder where  `full_name` = 'john kelvin'";
-$results = $conn->query($sql);
+include('db.php');
+$sql ="SELECT * FROM `orders-tb` where  `name` = 'rachael gatha'";
+$results = $db->query($sql);
 $row =$results->fetch_assoc();
  foreach($results as $row){
     $invoice->ln(4);
@@ -51,13 +51,13 @@ $row =$results->fetch_assoc();
     $invoice->ln(2);
     $invoice->setfont( 'courier', 'I',10);
     $invoice->cell(15,6 ,'name: ',0,0, 'c');
-    $invoice->cell(35,5 , $row['full_name'],0,1, 'c');
+    $invoice->cell(35,5 , $row['name'],0,1, 'c');
     $invoice->cell(15,6 ,'email: ',0,0, 'c');
     $invoice->cell(35,5 , $row['email'],0,1, 'c');
     $invoice->cell(15,6 ,'phone: ',0,0, 'c');
-    $invoice->cell(35,5 , $row['contacts'],0,1, 'c');
+    $invoice->cell(35,5 , $row['phone'],0,1, 'c');
     $invoice->cell(15,6 ,'adress: ',0,0, 'c');
-    $invoice->cell(35,5 ,$row['adress'],0,1, 'c');
+    $invoice->cell(35,5 ,$row['zip'],0,1, 'c');
     $invoice->cell(15,6 ,'city: ',0,0, 'c');
     $invoice->cell(35,5 , $row['city'],0,1, 'c');
  }

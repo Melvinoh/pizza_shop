@@ -157,17 +157,34 @@ $(document).ready(function(){
 
 
 //user address scripts
-$('document').ready(function(){
-  $(".address-wrapper").on("submit", function(event){
-      event.preventDefault();
-      var formValues= $(this).serialize();
-      $.post("/pizza_shop/api/orders.php", formValues , function(data){ 
-          $(".user-details").html(data);
-          alert(formValues);
-    })
-  })          
+$("document").ready(function(){
+  $('.img_submit').on("click",function(e){
+      e.preventDefault();
+      // var id = $('.img_submit').val();
+      var id = $(this).siblings(".ctitemid").val();
+      $.post("/pizza_shop/api/filters.php?q=catfilter",{id:id}, function(data){
+          alert(id);
+          $(".grid_items").html(data);
+          console.log(id);
+      });
+  });
 });
 
+
+
+//filters section
+$("document").ready(function(){
+  $('.img_submit').on("click",function(e){
+      e.preventDefault();
+      // var id = $('.img_submit').val();
+      var id = $('.img_submit').siblings('ctitemid').val();
+      console.log(id);
+      $.post("/pizza_shop/api/filters.php?q=catfilter",{id:id}, function(data){
+          alert(id);
+          $(".grid_items").html(data);
+      });
+  });
+});
 
 
 

@@ -14,40 +14,17 @@
                     
                     foreach($results as $row):
                     ?>
-                    <form method="" >
+                    <div method="" >
                         <div class="cat-item">
                             <div class="content">
-                                <img src="../../pictures/<?php echo($row['url_img'])?>" alt="img" id="img_submit">
+                                <img src="../../pictures/<?php echo($row['url_img'])?>" alt="img" class="img_submit" value="<?php echo($row['_id'])?>">
+                                <input type="hidden" value="<?php echo($row['_id'])?>" class="ctitemid">
                                 <h5><?php echo($row['cat_name'])?></h5>
                             </div>
-                            <div class="hidden">
-                                <input type="hidden" name="id" value="<?php echo($row['_id'])?>">
-                            </div>
-                        </div>
-                    </form>
-                    <?php endforeach; ?>
-                </div>
-
-                <?php
-                 $query = "SELECT * FROM `categories`";
-                 include('C:/xampp/htdocs/pizza_shop/api/db.php');
-                 $results = $db->query($query);
-                 $row = $results->fetch_assoc();
-                 
-                 foreach($results as $row):
-                ?>
-                <form method="" >
-                    <div class="cat-item">
-                        <div class="content">
-                            <img src="../../pictures/<?php echo($row['url_img'])?>" alt="img" id="img_submit">
-                            <h5><?php echo($row['cat_name'])?></h5>
-                        </div>
-                        <div class="hidden">
-                            <input type="hidden" name="id" value="<?php echo($row['_id'])?>">
                         </div>
                     </div>
-                </form>
-                <?php endforeach ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
             <hr>
             <form action="">
@@ -180,5 +157,18 @@
         </div>
     </div>
 </section>
-    <?php include('../components/footer.php')?>
+
+<?php include('../components/footer.php')?>
+<script>
+    $("document").ready(function(){
+        $('.img_submit').on("click",function(e){
+            e.preventDefault();
+            var id = $(this).siblings(".ctitemid").val();
+            $.post("/pizza_shop/api/filters.php?q=catfilter",{id:id}, function(data){
+                $(".grid-items").html(data);
+                console.log(id);
+            });
+        });
+    });
+</script>
 
